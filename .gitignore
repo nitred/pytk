@@ -1,0 +1,13 @@
+# pyc files
+*.pyc
+
+# setup files and directories
+build/
+dist/
+pytk.egg-info/
+
+# notebook directory
+notebooks/
+
+# images
+*.png
