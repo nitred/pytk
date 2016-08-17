@@ -5,7 +5,7 @@ import numpy as np
 def shuffle_two_arrays_in_unison(arr1=None, arr2=None):
     """
     Shuffle two 1D-numpy arrays index-wise.
-    
+
     Corresponding indices are kept in both the arrays
     Assumes both the arrays are of same length.
 

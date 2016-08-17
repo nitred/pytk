@@ -3,7 +3,7 @@ Commonly used and needed python scripts
 
 ## Installation
 ```
-git clone git@github.com:nitred/pynrtk.git
-cd pynrtk
+git clone git@bitbucket.org:nitred_recogizer/pytk.git
+cd pytk
 python setup.py install
 ```
