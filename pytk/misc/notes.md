@@ -1,23 +1,23 @@
 The notes here are intended to be a collection of snippets from miscellaneous topics.
 
-### Notes
+# Notes
 
-##### ignoring warnings  
+### ignoring warnings  
 ```python
 import warnings
 warnings.filterwarnings("ignore")
 ```
 
 
-##### easy logging customization
+### easy logging customization
 * follow instructions mentioned in the file [logging.md](logging.md).
 
 
-##### increasing jupyter notebook width
+### increasing jupyter notebook width
   * follow instructions mentioned in the [link](http://stackoverflow.com/questions/21971449/how-do-i-increase-the-cell-width-of-the-ipython-notebook-in-my-browser)
 
 
-##### cPickle dump
+### cPickle dump
 ```python
 import cPickle
 with open("myfile.pkl", 'w') as f:
@@ -25,7 +25,7 @@ with open("myfile.pkl", 'w') as f:
 ```
 
 
-##### pretty print
+### pretty print
 ```python
 from pprint import pprint
 sample_dict = {
@@ -39,7 +39,7 @@ pprint(sample_dict)
 ```
 
 
-##### List, Generator, Set, Dict Comprehensions
+### List, Generator, Set, Dict Comprehensions
 ```python
 a = [1,2,3]
 
@@ -56,5 +56,5 @@ a = [1,2,3]
 {i:i**2 for i in a}
 ```
 
-### TODO
+## TODO
 * command line arguments
