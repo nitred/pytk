@@ -22,3 +22,12 @@ plt.rcParams["figure.figsize"] = 10,10
 import pandas as pd
 pd.set_option('display.mpl_style', 'default')
 ```
+
+1. matplotlib without needing x-server (eg: docker)
+```python
+import matplotlib
+# Force matplotlib to not use any Xwindows backend.
+matplotlib.use('TKAgg')  # 'Agg' or 'GTKgg' or 'TKAgg'
+# import pyplot
+from matplotlib import pyplot
+```
