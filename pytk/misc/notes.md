@@ -57,5 +57,8 @@ notes in the following [link](http://stackoverflow.com/questions/372042/differen
 ### returning multiple values in python (NamedTuple)
 notes in the following [link](http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python)
 
+### file_name, filename, file conventions
+notes in the following [link](http://english.stackexchange.com/questions/5366/which-is-correct-filename-file-name-or-filename)
+
 ## TODO
 * command line arguments
