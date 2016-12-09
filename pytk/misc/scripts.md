@@ -1,7 +1,16 @@
 # Scripts
-* dictionary
+* Dictionary
 ```python
-d = {1:1, 2:'b', 'a':'a', 'b':2}
+d = {
+    'bool':True,
+    'int': 2,
+    'float': 10.2312
+    'str': "hello_world",
+    'obj': {
+        '1': 1,
+        'a': "a"
+    }
+}
 ```
 
 * Python 3: to_str
