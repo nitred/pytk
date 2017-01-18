@@ -134,3 +134,7 @@ def test_get_devices(test_dir):
 
     assert expected_file_list == received_file_list, "get_devices not working properly"
 ```
+
+# Coverage
+
+`py.test --cov-report term-missing  --cov=shazam tests/ -s -v`
