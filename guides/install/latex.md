@@ -7,3 +7,7 @@ Install Texlive
 
 Install Texmaker  
 ```sudo apt-get install texmaker```
+
+Adding dictionary
+* Goto, Options, Configure Texmaker, Editor
+* Choose dictionary: /usr/share/hunspell/en_US.dic (680KB)
