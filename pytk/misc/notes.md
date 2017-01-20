@@ -63,5 +63,11 @@ minutes, seconds = divmod(seconds, 60)
 # 2, 17
 ```
 
+* Find date in string
+```python
+import dateutil.parser as dparser
+datetime_obj = dparser.parse("Oh the horror on 29-03-01", fuzzy=True)
+```
+
 ## TODO
 * command line arguments
