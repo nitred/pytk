@@ -69,5 +69,14 @@ import dateutil.parser as dparser
 datetime_obj = dparser.parse("Oh the horror on 29-03-01", fuzzy=True)
 ```
 
+* Exceptions
+- When raising exceptions, the following source may be a good (guide)[http://stackoverflow.com/questions/9157210/how-do-i-raise-the-same-exception-with-a-custom-message-in-python]
+```python
+except Exception as e:
+  e.args = (e.args[0] + custom_message, ) + e.args[1:]
+```
+
+
+
 ## TODO
 * command line arguments
