@@ -69,5 +69,8 @@ import dateutil.parser as dparser
 datetime_obj = dparser.parse("Oh the horror on 29-03-01", fuzzy=True)
 ```
 
+* PDF vs PMF
+Amazing intuitive distinction [link](http://math.stackexchange.com/questions/23293/probability-density-function-vs-probability-mass-function)
+
 ## TODO
 * command line arguments
