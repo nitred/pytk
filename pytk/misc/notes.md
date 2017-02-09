@@ -2,26 +2,26 @@ The notes here are intended to be a collection of snippets from miscellaneous to
 
 # Notes
 
-* ignoring warnings  
+## ignoring warnings python
 ```python
 import warnings
 warnings.filterwarnings("ignore")
 ```
 
-* easy logging customization
+## easy logging customization
 follow instructions mentioned in the file [logging.md](logging.md).
 
-* increasing jupyter notebook width
+## increasing jupyter notebook width
   follow instructions mentioned in the [link](http://stackoverflow.com/questions/21971449/how-do-i-increase-the-cell-width-of-the-ipython-notebook-in-my-browser)
 
-* cPickle dump
+## cPickle dump
 ```python
 import cPickle
 with open("myfile.pkl", 'w') as f:
     cPickle.dump(x, f, protocol=cPickle.HIGHEST_PROTOCOL)
 ```
 
-* pretty print
+## pretty print
 ```python
 from pprint import pprint
 sample_dict = {
@@ -34,7 +34,7 @@ sample_dict = {
 pprint(sample_dict)
 ```
 
-* List, Generator, Set, Dict Comprehensions
+## List, Generator, Set, Dict Comprehensions
 ```python
 a = [1,2,3]
 # list comprehension
@@ -47,41 +47,43 @@ a = [1,2,3]
 {i:i**2 for i in a}
 ```
 
-* python interfaces
+## python interfaces
 notes in the following [link](http://stackoverflow.com/questions/372042/difference-between-abstract-class-and-interface-in-python)
 
-* returning multiple values in python (NamedTuple)
+## returning multiple values in python (NamedTuple)
 notes in the following [link](http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python)
 
-* file_name, filename, file conventions
+## file_name, filename, file - naming conventions
 notes in the following [link](http://english.stackexchange.com/questions/5366/which-is-correct-filename-file-name-or-filename)
 
-* Using divmod
+## Using divmod
 ```python
 seconds = 137
-minutes, seconds = divmod(seconds, 60)
-# 2, 17
+minutes, seconds = divmod(seconds, 60)  # 2, 17
 ```
 
-* Find date in string
+## Find date in string
 ```python
 import dateutil.parser as dparser
 datetime_obj = dparser.parse("Oh the horror on 29-03-01", fuzzy=True)
 ```
 
-<<<<<<< HEAD
-* PDF vs PMF
-Amazing intuitive distinction [link](http://math.stackexchange.com/questions/23293/probability-density-function-vs-probability-mass-function)
-=======
-* Exceptions
-- When raising exceptions, the following source may be a good (guide)[http://stackoverflow.com/questions/9157210/how-do-i-raise-the-same-exception-with-a-custom-message-in-python]
+## Exceptions
+When raising exceptions, the following source may be a good [guide](http://stackoverflow.com/questions/9157210/how-do-i-raise-the-same-exception-with-a-custom-message-in-python)
 ```python
 except Exception as e:
   e.args = (e.args[0] + custom_message, ) + e.args[1:]
 ```
 
+## PDF vs PMF
+Amazing intuitive distinction [link](http://math.stackexchange.com/questions/23293/probability-density-function-vs-probability-mass-function)
 
->>>>>>> a1db323fce6f5a7fa22b9a4d92fd42224416f15d
+
+## Timestamp to String format
+```python
+Timestamp.strftime('%Y-%m-%d_%H:%M:%S')
+```
+
 
 ## TODO
 * command line arguments
