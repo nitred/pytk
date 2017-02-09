@@ -76,7 +76,10 @@ except Exception as e:
   e.args = (e.args[0] + custom_message, ) + e.args[1:]
 ```
 
-
+* Timestamp to String format
+```python
+Timestamp.strftime('%Y-%m-%d_%H:%M:%S')
+```
 
 ## TODO
 * command line arguments
