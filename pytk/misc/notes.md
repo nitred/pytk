@@ -75,10 +75,15 @@ except Exception as e:
   e.args = (e.args[0] + custom_message, ) + e.args[1:]
 ```
 
+## PDF vs PMF
+Amazing intuitive distinction [link](http://math.stackexchange.com/questions/23293/probability-density-function-vs-probability-mass-function)
+
+
 ## Timestamp to String format
 ```python
 Timestamp.strftime('%Y-%m-%d_%H:%M:%S')
 ```
+
 
 ## TODO
 * command line arguments

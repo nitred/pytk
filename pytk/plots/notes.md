@@ -31,3 +31,27 @@ matplotlib.use('TKAgg')  # 'Agg' or 'GTKgg' or 'TKAgg'
 # import pyplot
 from matplotlib import pyplot
 ```
+
+1. Geometric Brownian Motion
+```python
+from matplotlib import pyplot as plt
+import pandas as pd
+import numpy as np
+def geometric_brownian_motion(T = 1, N = 100, mu = 0.1, sigma = 0.01, S0 = 20):        
+    dt = float(T)/N
+    t = np.linspace(0, T, N)
+    W = np.random.standard_normal(size = N)
+    W = np.cumsum(W)*np.sqrt(dt) ### standard brownian motion ###
+    X = (mu-0.5*sigma**2)*t + sigma*W
+    S = S0*np.exp(X) ### geometric brownian motion ###
+    return S
+
+dates = pd.date_range('2012-01-01', '2013-02-22')
+T = (dates.max()-dates.min()).days / 365
+N = dates.size
+start_price = 100
+y = pd.Series(
+    geometric_brownian_motion(T, N, sigma=0.1, S0=start_price), index=dates)
+y.plot()
+plt.show()
+```

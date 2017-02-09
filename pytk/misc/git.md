@@ -3,4 +3,6 @@
 ```
 # revert the last commit and keeps the changes intact.
 git reset --soft HEAD~
+# undo git reset
+git reset HEAD@{1}
 ```
