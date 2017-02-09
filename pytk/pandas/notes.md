@@ -46,3 +46,10 @@ ts = pd.DatetimeIndex(periods=ts_periods, start='01.01.1990', end=None, freq='1D
 for chunk_index, chunk in ts.groupby(np.arange(ts_periods) // chunk_periods).iteritems():
     print(chunk_index, chunk)
 ```
+
+1. Group by time [Timegrouper](http://stackoverflow.com/questions/26646191/pandas-groupby-month-and-year)
+```python
+df = pd.DataFrame(data=np.zeros(10), index=pd.DatetimeIndex(periods=10, start='01.01.1990', end=None, freq='1D'))
+chunks_df = groupby(pd.TimeGrouper("2D")).sum()
+# `chunks_df` index will now contain the start of every
+```
