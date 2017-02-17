@@ -55,3 +55,26 @@ y = pd.Series(
 y.plot()
 plt.show()
 ```
+
+1. Realtime plot
+```python
+plt.axis([0, 10, 0, 1])
+plt.ion()
+
+for i in range(10):
+    y = np.random.random()
+    plt.scatter(i, y)
+    plt.pause(0.05)
+
+while True:
+    plt.pause(0.05)
+```
+
+1. Figures and Axes
+```python
+figure, axes = plt.subplots(2, 1)
+top, bot = axes
+top.hist(np.random.rand(1000), 20) # uniform
+bot.hist(np.random.normal(0, 1, 1000), 20) # normal
+plt.show()
+```
