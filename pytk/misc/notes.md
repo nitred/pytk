@@ -84,6 +84,13 @@ Amazing intuitive distinction [link](http://math.stackexchange.com/questions/232
 Timestamp.strftime('%Y-%m-%d_%H:%M:%S')
 ```
 
+## Resolve relative path from file
+```python
+import os
+_dir = os.path.dirname(__file__)
+filename = os.path.join(_dir, '/relative/path/to/file/you/want')
+```
+
 
 ## TODO
 * command line arguments
