@@ -30,6 +30,33 @@ df.pivot_table()  # Lookup documentation.
 [Offset Objects](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#dateoffset-objects)  
 [Offset Strings](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#timeseries-offset-aliases)
 
+### Split a number into chunks
+1. Split a number into equal sized chunks where the last chunk contains the remainder.
+```python
+number = 100
+max_chunk_size = 11
+chunks = pd.groupby(pd.Series(np.empty(number)), np.arange(number) // max_chunk_size).count().values
+# array([11, 11, 11, 11, 11, 11, 11, 11, 11,  1])
+```
+
+1. Split a number as equally as possible into n groups.
+```python
+def split(total, n_groups):
+    periods = np.empty(n_groups, dtype=int)
+    for i in range(n_groups):
+        period = total // n_groups
+        periods[i] = period
+        total = total - period
+        n_groups = n_groups - 1
+    return periods
+split(20, 2)
+# [10 10]
+split(20, 3)
+# [6 7 7]
+split(32, 6)
+# [5 5 5 5 6 6]
+```
+
 ### Split dataframe / index into chunks
 1. split dataframe into chunks of fixed size
 ```python
