@@ -91,6 +91,33 @@ _dir = os.path.dirname(__file__)
 filename = os.path.join(_dir, '/relative/path/to/file/you/want')
 ```
 
+# Correlations
+
+## Correlation Methods 1 : From Covariance Matrix
+[Link 1](https://en.wikipedia.org/wiki/Covariance_matrix#Correlation_matrix)
+```python
+# some arr with n_samples x n_features
+cov = np.cov(arr, rowvar=False)
+diagonal_neg_square_root = np.diag(np.power(np.diagonal(cov), -0.5))
+corr = np.dot(diagonal_neg_square_root, np.dot(cov, diagonal_neg_square_root))
+```
+
+## Correlation Methods 2 : From Standardizing the data
+[Link 1](https://en.wikipedia.org/wiki/Covariance_matrix#Correlation_matrix)  
+[Link 2 - Bias or ddof](https://en.wikipedia.org/wiki/Covariance_matrix#Estimation)
+```python
+# some arr with n_samples x n_features
+# Standardizing the array
+# NOTE: The ddof is the same as using (n-1) in the denominator instead of (n)
+arr = (arr - arr.mean(axis=0)) / arr.std(axis=0, ddof=1.0)
+corr = np.cov(arr, rowvar=False)
+```
+
+## Correlation Methods 3 : Directly using numpy correlate
+```python
+# some arr with n_samples x n_features
+corr = np.correlate(arr.T)
+```
 
 ## TODO
 * command line arguments
