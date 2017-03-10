@@ -116,7 +116,7 @@ corr = np.cov(arr, rowvar=False)
 ## Correlation Methods 3 : Directly using numpy correlate
 ```python
 # some arr with n_samples x n_features
-corr = np.correlate(arr.T)
+corr = np.corrcoef(arr.T)
 ```
 
 ## TODO
