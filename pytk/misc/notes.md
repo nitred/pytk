@@ -119,5 +119,14 @@ corr = np.cov(arr, rowvar=False)
 corr = np.corrcoef(arr.T)
 ```
 
+# Choose random subset of indexes
+```python
+n_total = 100
+n_subset = 10
+# Random order
+chosen_indexes = np.random.permutation(np.arange(n_total))[:n_subset]
+# Sorted
+chosen_indexes = np.sort(np.random.permutation(np.arange(n_total))[:n_subset])
+```
 ## TODO
 * command line arguments
