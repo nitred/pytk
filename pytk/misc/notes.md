@@ -163,5 +163,12 @@ for f in os.listdir(directory):
         print(f.ljust(30) + str(round(os.path.getsize(directory + f) / 1000000, 2)) + 'MB')
 ```
 
+# Load Yaml File
+```python
+with open(config_filename, 'r') as stream:
+    # TODO: catch yaml.YAMLError, yaml.scanner.ScannerError, IOError
+    return yaml.load(stream)
+```
+
 ## TODO
 * command line arguments
