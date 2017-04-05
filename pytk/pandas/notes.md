@@ -81,15 +81,22 @@ chunks_df = groupby(pd.TimeGrouper("2D")).sum()
 # `chunks_df` index will now contain the start of every
 ```
 
-## Cumulative + Consecutive
+### Cumulative + Consecutive
 1. Assign unique groups to consecutive numbers and get count of consecutive number
 ```python
 df = pd.DataFrame(data=(np.array(range(10)*2) // 3), columns=['val'])
 # [0 0 0 1 1 1 2 2 2 3 0 0 0 1 1 1 2 2 2 3]
-
 df['val_grp'] = (df['val'].diff() != 0).astype(int).cumsum()
 # [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8]
-
 df.groupby('val_grp').count()
 # [3, 3, 3, 1, 3, 3, 3, 1]
+```
+
+
+### Slice dataframe based on its index being in another list/Series
+```python
+# Index IN lookup
+df_slice = df[df.index.isin(other_index_lookup['date'])]
+# Index NOT IN lookup
+df_slice = df[~df.index.isin(other_index_lookup['date'])]
 ```
