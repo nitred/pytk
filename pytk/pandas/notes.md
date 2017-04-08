@@ -100,3 +100,16 @@ df_slice = df[df.index.isin(other_index_lookup['date'])]
 # Index NOT IN lookup
 df_slice = df[~df.index.isin(other_index_lookup['date'])]
 ```
+
+### Deal with duplicates
+Credit: DeenaG
+```python
+if drop_method == 'last':
+    dataframe = dataframe[~dataframe.index.duplicated(keep='last')]
+if drop_method == 'nan':
+    duplicated_timestamps = dataframe.index[dataframe.index.duplicated()]
+    dataframe = dataframe[~dataframe.index.duplicated()]
+    dataframe.loc[duplicated_timestamps] = np.nan
+if drop_method == 'mean':
+    dataframe.groupby(dataframe.index).mean()
+```
