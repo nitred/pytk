@@ -82,6 +82,9 @@ Amazing intuitive distinction [link](http://math.stackexchange.com/questions/232
 ## Timestamp to String format
 ```python
 Timestamp.strftime('%Y-%m-%d_%H:%M:%S')
+# OR
+import datetime
+datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
 ```
 
 ## Resolve relative path from file
