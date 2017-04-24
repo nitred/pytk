@@ -100,3 +100,9 @@ df_slice = df[df.index.isin(other_index_lookup['date'])]
 # Index NOT IN lookup
 df_slice = df[~df.index.isin(other_index_lookup['date'])]
 ```
+
+
+### Index to Epoch
+```python
+df['epoch'] = index.astype(np.int64) // 10**9
+```
