@@ -112,3 +112,50 @@ server {
 ## Check rating of setup
 
 `https://www.ssllabs.com/ssltest/analyze.html?d=example.com`
+
+
+## Letsencrypt compatibility with Http to Https Redirection
+
+#### Edit the sites-available file
+Edit `/etc/nginx/sites-available/default` or any other site to look like the following:
+```
+server {
+  listen 80;
+  server_name example.com www.example.com;
+  include /etc/nginx/snippets/letsencrypt-acme-challenge.conf;
+  include /etc/nginx/snippets/http-to-https-redirect.conf;
+}
+
+server {
+  # SSL configuration
+  listen 443 ssl;
+  server_name example.com www.example.com;
+
+  include /etc/nginx/snippets/ssl-example.com.conf;
+  include /etc/nginx/snippets/ssl-params.conf;
+
+  location / {
+    include proxy_params;
+    # SOME CUSTOM SERVER
+    proxy_pass http://127.0.0.1:PORT;
+  }
+}
+```
+
+Where new conf files look like:
+* `/etc/nginx/snippets/letsencrypt-acme-challenge.conf`  
+```
+location ^~ /.well-known/acme-challenge/ {
+    default_type "text/plain";
+    root         /var/www/html;
+}
+location = /.well-known/acme-challenge/ {
+    return 404;
+}
+```
+* `/etc/nginx/snippets/http-to-https-redirect.conf`  
+```
+location / {
+    return 301 https://$server_name$request_uri;
+}
+```
