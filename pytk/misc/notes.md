@@ -173,5 +173,18 @@ with open(config_filename, 'r') as stream:
     return yaml.load(stream)
 ```
 
+# Numpy Piecewise Awesomeness
+If I need to check if a column's values falls into certain ranges. And for each range I have to replace it with either 0 (Low), 1(Med), 2(High). For example if the values are between [0, 0.3) then I assign 0 (low), [0.3, 0.7) = 1(med), [0.7, 1.0]= 2(high).
+```python
+x = df['column'].values
+    df['severity_column'] = np.piecewise(x,
+                                         condlist=[0 <= x < 3,
+                                                   0.3 <= x < 0.7,
+                                                   0.7 <= x <= 1.0],
+                                         funclist=[lambda x: 0,
+                                                   lambda x: 1,
+                                                   lambda x: 2])
+```
+
 ## TODO
 * command line arguments

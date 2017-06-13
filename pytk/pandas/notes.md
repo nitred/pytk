@@ -113,3 +113,8 @@ if drop_method == 'nan':
 if drop_method == 'mean':
     dataframe.groupby(dataframe.index).mean()
 ```
+
+### Index to Epoch
+```python
+df['epoch'] = index.astype(np.int64) // 10**9
+```
