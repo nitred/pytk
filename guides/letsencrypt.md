@@ -20,7 +20,9 @@ location ~ /.well-known {
 * Register domain with CA
   - `sudo letsencrypt certonly -a webroot --webroot-path=/var/www/html -d example.com -d www.example.com`
 
-**IMPORTANT**: The output should be the four previously mentioned certificate files. In a moment, you will configure your web server to use `fullchain.pem` as the certificate file, and `privkey.pem` as the certificate key file.
+**IMPORTANT-1**: The output should be the four previously mentioned certificate files. In a moment, you will configure your web server to use `fullchain.pem` as the certificate file, and `privkey.pem` as the certificate key file.
+
+**IMPORTANT-2**: If you have a website hosted on Digitalocean, then make sure that the subdomain is properly mapped.
 
 ## Certificate Locations
 
