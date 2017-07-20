@@ -161,3 +161,7 @@ location / {
     return 301 https://$server_name$request_uri;
 }
 ```
+
+#### Update Snippets File
+* /etc/nginx/snippets/ssl-example.com.conf
+  * Make sure to update this file with the renewed certificate folder path.
