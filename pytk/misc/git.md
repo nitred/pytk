@@ -15,3 +15,6 @@ git reset HEAD@{1}
 
 1. Create tag (annotated)  
 `git tag -a v1.4 -m "my version 1.4"`
+
+1. Ignore filemode changes from diff
+`git config core.fileMode false`
