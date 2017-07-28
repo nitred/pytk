@@ -163,5 +163,6 @@ location / {
 ```
 
 #### Update Snippets File
-* /etc/nginx/snippets/ssl-example.com.conf
-  * Make sure to update this file with the renewed certificate folder path.
+* `/etc/nginx/snippets/ssl-example.com.conf`
+  * Make sure to update this file with the renewed certificate folder path whenever you renew your certificates.
+  * Don't delete old certificate files. Letsencrypt automatically recognizes old certificates and ignores them.
