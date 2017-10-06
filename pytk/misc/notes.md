@@ -186,5 +186,12 @@ x = df['column'].values
                                                    lambda x: 2])
 ```
 
+# Flask SQLAlchemy Create Index on Column
+```python
+db.create_all()
+table_col_index = db.Index('table_col_index', Table.column)
+table_col_index.create(bind=db.engine)
+```
+
 ## TODO
 * command line arguments

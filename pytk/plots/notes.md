@@ -1,5 +1,21 @@
 ### Notes
 
+1. multiple subplots
+```python
+f, ax = plt.subplots(len(dfs), 1, figsize=(12, 16), sharey=True, sharex=True)
+for i in range(len(dfs)):
+    ax[i].scatter(x=df['col1'], y=df['col2'], label='label', color=["#aa3322"])
+plt.suptitle(title)
+plt.legend()
+plt.show()
+```
+
+1. Save an plot as image
+```python
+plt.gcf().savefig(path + ".jpeg")
+```
+
+
 1. jupyter notebook matplotlib integration  
 ```python
 %matplotlib notebook
@@ -45,7 +61,6 @@ def geometric_brownian_motion(T = 1, N = 100, mu = 0.1, sigma = 0.01, S0 = 20):
     X = (mu-0.5*sigma**2)*t + sigma*W
     S = S0*np.exp(X) ### geometric brownian motion ###
     return S
-
 dates = pd.date_range('2012-01-01', '2013-02-22')
 T = (dates.max()-dates.min()).days / 365
 N = dates.size
@@ -60,12 +75,10 @@ plt.show()
 ```python
 plt.axis([0, 10, 0, 1])
 plt.ion()
-
 for i in range(10):
     y = np.random.random()
     plt.scatter(i, y)
     plt.pause(0.05)
-
 while True:
     plt.pause(0.05)
 ```
